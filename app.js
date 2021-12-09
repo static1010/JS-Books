@@ -34,7 +34,6 @@ function addBook(event) {
             title,
             author,
             isbn
-
         }
 
         const headers = {
@@ -107,7 +106,6 @@ function loadEditForm(bookId) {
 
     elements.btnDoneEdit.value = bookId
 
-
 }
 
 function editBook(event) {
@@ -142,10 +140,7 @@ function editBook(event) {
         .then(loadBooks)
         .catch(err => console.log(err))
 
-
     fromEditToSubmitForm()
-
-
 
 }
 
@@ -154,14 +149,11 @@ function cancelEdit(event) {
     fromEditToSubmitForm()
 }
 
-
-
 function fromEditToSubmitForm() {
     clearElementValue(elements.inputAuthor, elements.inputTitle,
         elements.inputIsbn)
 
     elements.h3Form.textContent = 'FORM'
-
 
     elements.btnSubmit.style.display = "block"
     elements.btnDoneEdit.style.display = "none"
@@ -177,7 +169,6 @@ function clearElementValue(...arguments) {
 
 function deleteBook(bookId) {
     let deleteUrl = `${baseUrl}/${bookId}`
-
 
     let headers = {
         method: "DELETE",
